@@ -1,0 +1,27 @@
+---
+import type { Project } from "../types";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<a
+  class="group glass-card p-6 rounded-xl border border-outline-variant/15 hover:bg-surface-bright transition-all duration-300 flex flex-col"
+  href={project.url}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <div class="flex justify-between items-start mb-6">
+    <div class="p-2.5 bg-surface-container-high rounded-md">
+      <span class="material-symbols-outlined text-tertiary text-xl">{project.icon}</span>
+    </div>
+    <span class="material-symbols-outlined text-on-surface-variant/30 text-base">open_in_new</span>
+  </div>
+  <h3 class="font-headline text-lg font-bold mb-2 group-hover:text-tertiary transition-colors">
+    {project.name}
+  </h3>
+  <p class="text-on-surface-variant text-sm leading-relaxed">{project.description}</p>
+</a>

@@ -1,0 +1,17 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { projects } from "../data/services";
+---
+
+<section id="projects" class="mb-14">
+  <div class="flex items-center justify-between mb-10">
+    <h2 class="font-headline text-2xl font-bold tracking-tight">Open Source</h2>
+    <div class="h-[1px] flex-grow mx-8 bg-surface-variant/40"></div>
+    <span class="font-label text-[0.6875rem] uppercase tracking-widest text-on-surface-variant">
+      Project_List
+    </span>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</section>
