@@ -37,7 +37,7 @@ export const privateServices: Service[] = [
   {
     name: "rss.illuminating.me",
     url: "https://rss.illuminating.me",
-    description: "Self-hosted FreshRSS server deployed on Railway for RSS feed management.",
+    description: "Self-hosted FreshRSS server for RSS feed management.",
     icon: "rss_feed",
     status: "online",
   },
@@ -53,6 +53,14 @@ export const privateServices: Service[] = [
     url: "https://ci.illuminating.me",
     description: "CI/CD dashboard for monitoring build and deploy pipelines.",
     icon: "terminal",
+    status: "online",
+  },
+  {
+    name: "dokploy.illuminating.me",
+    url: "https://dokploy.illuminating.me",
+    description:
+      "Self-hosted PaaS platform on DigitalOcean VPS for container deployment and service management.",
+    icon: "rocket_launch",
     status: "online",
   },
 ];
