@@ -13,16 +13,26 @@ const statusColor = {
   limited: { dot: "bg-amber-500", text: "text-amber-500" },
   offline: { dot: "bg-red-500", text: "text-red-500" },
 }[service.status];
+
+const isLinked = !isPrivate && Boolean(service.url);
+const CardTag = isLinked ? "a" : "article";
+const linkAttrs = isLinked && service.url
+  ? {
+      href: service.url,
+      target: "_blank",
+      rel: "noopener noreferrer",
+    }
+  : {};
 ---
 
-<a
+<CardTag
   class:list={[
-    "group glass-card p-6 rounded-xl border border-outline-variant/15 hover:bg-surface-bright transition-all duration-300 flex flex-col justify-between",
+    "glass-card p-6 rounded-xl border border-outline-variant/15 transition-all duration-300 flex flex-col justify-between",
+    isLinked && "group hover:bg-surface-bright",
+    !isLinked && "cursor-default",
     service.span,
   ]}
-  href={service.url}
-  target="_blank"
-  rel="noopener noreferrer"
+  {...linkAttrs}
 >
   <div>
     <div class="flex justify-between items-start mb-6">
@@ -36,10 +46,15 @@ const statusColor = {
         </span>
       </div>
     </div>
-    <h3 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
+    <h3
+      class:list={[
+        "font-headline text-xl font-bold mb-2 transition-colors flex items-center gap-2",
+        isLinked && "group-hover:text-primary",
+      ]}
+    >
       {isPrivate && <span class="material-symbols-outlined text-base text-on-surface-variant/50">lock</span>}
       {service.name}
     </h3>
     <p class="text-on-surface-variant text-sm leading-relaxed">{service.description}</p>
   </div>
-</a>
+</CardTag>

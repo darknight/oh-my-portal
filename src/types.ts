@@ -1,6 +1,6 @@
 export interface Service {
   name: string;
-  url: string;
+  url?: string;
   description: string;
   icon: string;
   status: "online" | "limited" | "offline";

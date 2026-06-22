@@ -27,40 +27,45 @@ export const publicServices: Service[] = [
 
 export const privateServices: Service[] = [
   {
-    name: "bookmarks.illuminating.me",
-    url: "https://bookmarks.illuminating.me",
-    description:
-      "Self-hosted bookmark manager, migrated from Raindrop.io. Personal knowledge collection hub.",
+    name: "Bookmarks",
+    description: "Private bookmark and knowledge collection workspace.",
     icon: "bookmarks",
     status: "online",
   },
   {
-    name: "rss.illuminating.me",
-    url: "https://rss.illuminating.me",
-    description: "Self-hosted FreshRSS server for RSS feed management.",
+    name: "RSS Reader",
+    description: "Private feed reader for daily reading workflows.",
     icon: "rss_feed",
     status: "online",
   },
   {
-    name: "wallos.illuminating.me",
-    url: "https://wallos.illuminating.me",
-    description: "Self-hosted subscription management dashboard powered by Wallos.",
+    name: "Subscription Manager",
+    description: "Personal subscription management and recurring cost tracker.",
     icon: "payments",
     status: "online",
   },
   {
-    name: "ci.illuminating.me",
-    url: "https://ci.illuminating.me",
-    description: "CI/CD dashboard for monitoring build and deploy pipelines.",
+    name: "CI Dashboard",
+    description: "Private build and deployment activity dashboard.",
     icon: "terminal",
     status: "online",
   },
   {
-    name: "dokploy.illuminating.me",
-    url: "https://dokploy.illuminating.me",
-    description:
-      "Self-hosted PaaS platform on DigitalOcean VPS for container deployment and service management.",
-    icon: "rocket_launch",
+    name: "Status Monitor",
+    description: "Private status overview for personal infrastructure.",
+    icon: "monitor_heart",
+    status: "online",
+  },
+  {
+    name: "Push Notifications",
+    description: "Private notification channel for personal device alerts.",
+    icon: "notifications_active",
+    status: "online",
+  },
+  {
+    name: "Private Network",
+    description: "Trusted device coordination for private access.",
+    icon: "vpn_key",
     status: "online",
   },
 ];
